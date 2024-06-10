@@ -1,0 +1,56 @@
+// Set your brand colors
+$turquoise: #0d8187;
+$black: #303030;
+$white: #FFF;
+
+// Override global Sass variables from the /utilities folder
+@use "bulma/sass/utilities" with (
+  $family-primary: '"Bellota", system-ui',
+  $grey-dark: $black,
+  $grey-light: $black,
+  $primary: $turquoise,
+  $link: $turquoise,
+  $control-border-width: 2px
+);
+ 
+// Override Sass variables from the /form folder
+@use "bulma/sass/form" with (
+  $input-shadow: none,
+);
+
+// Import the components you need
+@use "bulma/sass/base";
+@use "bulma/sass/components/card";
+@use "bulma/sass/components/modal";
+@use "bulma/sass/components/navbar";
+@use "bulma/sass/elements/button";
+@use "bulma/sass/elements/icon";
+@use "bulma/sass/elements/content";
+@use "bulma/sass/elements/notification";
+@use "bulma/sass/elements/progress";
+@use "bulma/sass/elements/tag";
+@use "bulma/sass/layout/footer";
+
+// Import the themes so that all CSS variables have a value
+@use "bulma/sass/themes";
+
+// Import the Google Font
+@import url('https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #303030;
+
+}
+form {
+  label {
+    color: #303030;
+  }
+  width: 33%;
+}
