@@ -4,7 +4,7 @@ session_start();
 function alert($sessionName, $inputType, $inputName, $placeholder, $labelContent, $validIconClass, $invalidIconClass, $invalidText)
 {
     session_start();
-    
+    $_SESSION["success"] = "Spam detected";
     if (isset($_SESSION[$sessionName])) {
         echo '
             <div class="field">
@@ -85,18 +85,27 @@ function alert($sessionName, $inputType, $inputName, $placeholder, $labelContent
         <!-- Hero content: will be in the middle -->
         <div class="hero-body is-justify-content-center is-align-items-center">
             <div class="container has-text-centered">
+                <?php
+                if (isset($_SESSION['alertMiel'])) {
+                    echo '
+                        <div class="notification is-danger">
+                        Spam detected.
+                        </div>
+                        ';
+                }
+                if (isset($_SESSION['success'])) {
+                    echo '
+                        <div class="notification is-success animation" style animation:notifEntrance 20s ease 0s 1 normal forwards;>
+                        Form submitted with success
+                        </div>
+                        ';
+                }
+                ?>
                 <p class="title">Contact us</p>
                 <form class="box has-text-centered" action="controller/contactController.php" method="post" data-theme="light">
 
                     <?php
-    if (isset($_POST['alertMiel'])) {
-        echo '
-            <div class="notification is-danger">
-            <button class="delete"></button>
-            Spam detected.
-            </div>
-            ';
-    }
+    
 
                     alert(
                         'alertFirstname',

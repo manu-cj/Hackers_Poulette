@@ -105,9 +105,11 @@ if (isset($_POST['submit'])) {
         unset($_SESSION["alertsubject"]);
         unset($_SESSION["alertMessage"]);
         unset($_SESSION["alertagree"]);
+        unset($_SESSION["alertMiel"]);
         $_SESSION['mail'] = $mail;
         $_SESSION['name'] = $lastname . ' ' . $firstname;
         $_SESSION['message'] = $message;
+        $_SESSION['subject'] = $subject;
 
 
         header('Location: http://localhost:5000/mail.php');
