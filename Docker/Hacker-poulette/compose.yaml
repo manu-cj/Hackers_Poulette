@@ -7,6 +7,8 @@
 # You can add other services your application may depend on here, such as a
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
+version: '3'
+
 services:
   hacker-poulette:
     build:
@@ -39,6 +41,18 @@ services:
     environment:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: 
+
+  postfix:
+    image: exim
+    container_name: postfix
+    restart: unless-stopped
+    environment:
+      MAIL_DOMAIN: carenjotje@gmail.com
+      SMTP_LOGIN: user
+      SMTP_PASSWORD: password
+      RELAY_NETWORKS: 127.0.0.0/8 10.0.0.0/8
+    ports:
+      - "25:25"
 
 volumes:
   db_data:

@@ -1,22 +1,23 @@
+// assets/scss/main.scss
+
 // Set your brand colors
 $turquoise: #0d8187;
 $black: #303030;
 $white: #FFF;
 
 // Override global Sass variables from the /utilities folder
-@use "bulma/sass/utilities" with (
+@use "bulma/sass" with (
   $family-primary: '"Bellota", system-ui',
   $grey-dark: $black,
   $grey-light: $black,
   $primary: $turquoise,
   $link: $turquoise,
-  $control-border-width: 2px
+  $control-border-width: 2px,
+  $input-shadow: none
 );
- 
-// Override Sass variables from the /form folder
-@use "bulma/sass/form" with (
-  $input-shadow: none,
-);
+
+// Override Sass variables from the /form folder before it is loaded anywhere
+
 
 // Import the components you need
 @use "bulma/sass/base";
@@ -40,17 +41,11 @@ $white: #FFF;
 
 
 
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #303030;
-
-}
 form {
-  label {
-    color: #303030;
+
+  margin-top: 50px;
+  input {
+    width: 30%;
   }
-  width: 33%;
+  
 }

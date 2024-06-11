@@ -17,6 +17,7 @@ FROM php:8.3.0-apache
 
 # Copy app files from the app directory.
 COPY ../../ /var/www/html
+RUN apt-get update && apt-get install -y curl
 
 # Your PHP application may require additional PHP extensions to be installed
 # manually. For detailed instructions for installing extensions can be found, see

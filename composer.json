@@ -1,0 +1,18 @@
+{
+    "name": "manu/hackers_poulette",
+    "autoload": {
+        "psr-4": {
+            "Manu\\HackersPoulette\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "manu-cj",
+            "email": "carenjotje@gmail.com"
+        }
+    ],
+    "require": {
+         "phpmailer/phpmailer": "^6.5"
+        
+    }
+}
